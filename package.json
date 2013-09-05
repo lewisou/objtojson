@@ -1,0 +1,24 @@
+{
+    "author": "Lewis Z.",
+    "name": "objtojson",
+
+    "description": "a DSL to generate json stream for nodejs",
+    "version": "0.0.1",
+    
+    "repository": {
+	"url": "https://github.com/lewisou/objtojson"
+    },
+    "main": "./lib/objtojson",
+
+    "dependencies": {
+	"prelude-ls": "*"
+    },
+    "devDependencies" : {
+	"grunt": "~0.4.1",
+	"grunt-contrib-watch": "*",
+	"LiveScript": "*"
+    },
+    "engines": {
+	"node": "*"
+    }
+}
