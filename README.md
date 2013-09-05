@@ -13,6 +13,8 @@ Common Useage
 ---------
 
 ```livescript
+require! Generator : objtojson
+
 obj =
   prop1 : 1
   prop2 :

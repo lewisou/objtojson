@@ -3,7 +3,7 @@
     "name": "objtojson",
 
     "description": "a DSL to generate json stream for nodejs",
-    "version": "0.0.1d",
+    "version": "0.0.2",
     
     "repository": {
 	"url": "https://github.com/lewisou/objtojson"
