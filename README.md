@@ -72,6 +72,8 @@ Common Useage in Javascript
 ------------
 
 ```javascript
+  var Generator = require('objtojson');
+
   obj = {
     prop1: 1,
     prop2: {
@@ -91,6 +93,7 @@ Common Useage in Javascript
       }
     ]
   };
+
   testAttributes = function(){
     var test = Generator.gen(obj).attributes('prop1', 'prop3').dict();
     // output { prop1: 1, prop3: 'hello'}
