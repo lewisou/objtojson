@@ -77,7 +77,7 @@ test-node = ->
 
 test-children = ->
   test = Generator.gen obj
-    .children \prop4 ->
+    .children \prop4 !->
       @attributes \prop1, \prop3
     .dict!
 
@@ -91,7 +91,7 @@ test-child = ->
       subprop2 : 3
       subprop3 : 4
   test = Generator.gen obj
-    .child \prop2 ->
+    .child \prop2 !->
       @attributes \subprop2 \subprop3
     .dict!
     

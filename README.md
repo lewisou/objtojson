@@ -9,7 +9,7 @@ Install
 npm install objtojson
 ```
 
-Common Useage
+Common Useage in Livescript
 ---------
 
 ```livescript
@@ -66,6 +66,83 @@ test-child = ->
 
   # ouput {prop2 : {subprop2 : 3, subprop3 : 4}}
 
-
 ```
 
+Common Useage in Javascript
+------------
+
+```javascript
+  obj = {
+    prop1: 1,
+    prop2: {
+      prop21: 'a',
+      prop22: 'b'
+    },
+    prop3: 'hello',
+    prop4: [
+      {
+        prop1: 1,
+        prop2: 2,
+        prop3: 3
+      }, {
+        prop1: 4,
+        prop2: 5,
+        prop3: 6
+      }
+    ]
+  };
+  testAttributes = function(){
+    var test = Generator.gen(obj).attributes('prop1', 'prop3').dict();
+    // output { prop1: 1, prop3: 'hello'}
+  };
+
+  testNode = function(){
+    var test = Generator.gen(obj).node('fakeprop', function(){
+      return 'a fake value';
+    }).node('fakeprop2', function(){
+      return "a fake value 2 " + this.prop3;
+    }).dict();
+
+    // output { fakeprop: 'a fake value', fakeprop2: 'a fake value 2 hello'}
+  };
+
+  testChildren = function(){
+    var test = Generator.gen(obj).children('prop4', function(){
+      this.attributes('prop1', 'prop3');
+    }).dict();
+
+    // output {
+    //  prop4: [
+    //    {
+    //      prop1: 1,
+    //      prop3: 3
+    //    }, {
+    //      prop1: 4,
+    //      prop3: 6
+    //    }
+    //  ]
+  };
+
+  testChild = function(){
+    var obj, test;
+    obj = {
+      prop1: 1,
+      prop2: {
+        subprop1: 2,
+        subprop2: 3,
+        subprop3: 4
+      }
+    };
+    test = Generator.gen(obj).child('prop2', function(){
+      this.attributes('subprop2', 'subprop3');
+    }).dict();
+
+    // output {
+    //   prop2: {
+    //     subprop2: 3,
+    //     subprop3: 4
+    //   }
+    // }
+  };
+
+```
