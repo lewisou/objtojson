@@ -1,8 +1,20 @@
 objtojson
 =========
 
-Better way to stringify your object
+A better way to stringify your object in nodejs
 
+quick view in coffee/livescript
+```livescript
+    json = Generator.gen inv
+      .child 'counts' -> @attributes 'count_1' 'count_2' 'count_3'
+      .attributes 'sloc'
+      .node 'now' -> Time.now
+      .child 'item' ->
+        @attributes 'code' 'description'
+      .child 'location' ->
+        @attributes 'code'
+      .dict()
+```
 Install
 ---------
 ```bash
