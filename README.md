@@ -34,23 +34,23 @@ test-attributes = ->
     .attributes \prop1, \prop3
     .dict!
 
-  obj-equal test, {prop1: 1, prop3: \hello}
+  # output {prop1: 1, prop3: \hello}
 
 test-node = ->
-  test = Generator.gen!
-    .node \fakeprop (empty) -> 'a fake value'
-    .node \fakeprop2 (empty) -> 'a fake value 2'
+  test = Generator.gen obj
+    .node \fakeprop, -> 'a fake value'
+    .node \fakeprop2, -> "a fake value 2 #{@prop3}"
     .dict!
 
-  obj-equal test, {fakeprop : 'a fake value', fakeprop2: 'a fake value 2'}
+  # output {fakeprop : 'a fake value', fakeprop2: 'a fake value 2 hello'}
 
 test-children = ->
   test = Generator.gen obj
-    .children \prop4 (ele) ->
-      ele.attributes \prop1, \prop3
+    .children \prop4 ->
+      @attributes \prop1, \prop3
     .dict!
 
-  obj-equal test, { prop4: [ { prop1: 1, prop3: 3 }, { prop1: 4, prop3: 6 } ] }
+  # output { prop4: [ { prop1: 1, prop3: 3 }, { prop1: 4, prop3: 6 } ] }
 
 test-child = ->
   obj =
@@ -59,11 +59,13 @@ test-child = ->
       subprop1 : 2
       subprop2 : 3
       subprop3 : 4
-  g = new Generator obj
-  g.child \prop2, (p2) ->
-    p2.attributes \subprop2 \subprop3
+  test = Generator.gen obj
+    .child \prop2, ->
+      @attributes \subprop2 \subprop3
+    .dict!
 
-  obj-equal g.rs, {prop2 : {subprop2 : 3, subprop3 : 4}}
+  # ouput {prop2 : {subprop2 : 3, subprop3 : 4}}
+
 
 ```
 
