@@ -35,9 +35,9 @@
 
 <p>quick view in coffee/livescript</p>
 
-<div class="highlight"><pre>    <span class="nv">json = </span><span class="nx">Generator</span><span class="p">.</span><span class="nx">gen</span> <span class="nx">inv</span>
-      <span class="p">.</span><span class="nx">attributes</span> <span class="s">'sloc'</span>
-      <span class="p">.</span><span class="nx">node</span> <span class="s">'now'</span> <span class="nf">-&gt;</span> <span class="nx">Time</span><span class="p">.</span><span class="nx">now</span>
+<div class="highlight"><pre>    <span class="nv">json = </span><span class="nx">Generator</span><span class="p">.</span><span class="nx">gen</span> <span class="nx">aobject</span>
+      <span class="p">.</span><span class="nx">attributes</span> <span class="s">'id'</span> <span class="s">'sloc'</span>
+      <span class="p">.</span><span class="nx">node</span> <span class="s">'now'</span> <span class="nf">-&gt;</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
       <span class="p">.</span><span class="nx">child</span> <span class="s">'item'</span> <span class="nf">-&gt;</span>
         <span class="nx">@attributes</span> <span class="s">'code'</span> <span class="s">'description'</span>
       <span class="p">.</span><span class="nx">children</span> <span class="s">'locations'</span> <span class="nf">-&gt;</span>
@@ -208,6 +208,16 @@
       </div>
     </div>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-43832827-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
