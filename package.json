@@ -1,9 +1,9 @@
-B0;95;c{
+{
     "author": "Lewis Z.",
     "name": "objtojson",
 
     "description": "a DSL to generate json stream for nodejs",
-    "version": "0.0.3-1",
+    "version": "0.0.3.1",
     
     "repository": {
 	"url": "https://github.com/lewisou/objtojson"
