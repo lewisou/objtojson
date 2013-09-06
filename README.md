@@ -1,4 +1,4 @@
-objtojson
+Over view
 =========
 
 A better way to stringify your object in nodejs
