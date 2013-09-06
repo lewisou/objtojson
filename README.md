@@ -1,7 +1,7 @@
 Overview
 =========
 
-A better way to stringify your object in nodejs
+A better way to stringify your object in nodejs: [http://lewisou.github.io/objtojson] (http://lewisou.github.io/objtojson)
 
 quick view in coffee/livescript
 ```livescript
